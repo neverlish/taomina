@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	font-family: 'Raleway', sans-serif;
+	color: gray;
+}
+
+.custom-navbar-top {
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: 1;
+	height: 50px;
+	background-color: rgba(255,255,255,0.8);
+	vertical-align: middle;
+}
+
+.navbar-menu-left, .navbar-menu-right {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	color: gray;
+}
+
+.navbar-menu-left a:hover, .navbar-menu-right a:hover, .navbar-menu-left a:active, .navbar-menu-right a:active {
+	color: black;
+}
+
+.navbar-menu-left {
+	margin-left: 20px;
+}
+
+.navbar-menu-right {
+	float: right;
+	margin-right: 20px;
+}
+
+.navbar-shop {
+	border-bottom: 5px solid rgb(74,36,17);
+}
+
+.navbar-project {
+	border-bottom: 5px solid rgb(241,229,212);
+}
+
+.navbar-about {
+	border-bottom: 5px solid rgb(129,129,129);
+}
+
+.navbar-footer {
+	height: 50px; 
+	margin-top: 100px;
+	padding-top: 15px; 
+	background-color: rgb(225,225,225);
+}
+
+/********** MAIN PAGE ***********/
+.main-thumbnail {
+	height: 300px; 
+
+}
+
+.main-thumbnail-img {
+	height: 50%;
+	width: 100%;
+	object-fit: contain;
+}
+
+.main-about {
+	height: 750px;
+	padding: 200px 0;
+	line-height: 200%;
+	font-size: 20px;
+}
+
+.main-about-title {
+	font-size: 30px;
+	margin: 50px;
+}

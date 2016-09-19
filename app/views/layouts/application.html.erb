@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taomina</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <link rel="shortcut icon" href="http://www.taomina.com/favicon.png">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render 'layouts/navbar' %>
+  	<div style="margin-top: 50px;">
+    <%= yield %>
+    </div>
+    <div class="text-center navbar-footer">
+      <span>All rigths reserved, © 2015 TAOMINA.</span>
+    </div>
+  </body>
+</html>
