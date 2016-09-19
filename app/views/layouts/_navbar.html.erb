@@ -1,22 +1,25 @@
 <div class="custom-navbar-top">
 	<%= link_to root_path do %>
 		<span class="navbar-menu-left">
-			<%= image_tag "http://www.taomina.com/wp-content/uploads/2015/09/logo_2015.png", height: "20px" %>
+			<%= image_tag "logo", height: "20px" %>
 		</span>
 	<% end %>
 	<%= link_to root_path do %>
-		<span class="navbar-menu-right navbar-shop">
+		<span class="navbar-menu-right">
 			<span>SHOP</span>
+			<hr class="navbar-hr navbar-shop">
 		</span>
 	<% end %>
-	<%= link_to root_path do %>
-		<span class="navbar-menu-right navbar-project">
+	<%= link_to projects_path do %>
+		<span class="navbar-menu-right">
 			<span>PROJECT</span>
+			<hr class="navbar-hr navbar-project">
 		</span>
 	<% end %>
 	<%= link_to home_about_path do %>
-		<span class="navbar-menu-right navbar-about"">
+		<span class="navbar-menu-right">
 			<span>ABOUT</span>
+			<hr class="navbar-hr navbar-about">
 		</span>	
 	<% end %>
 </div>
