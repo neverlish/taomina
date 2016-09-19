@@ -29,7 +29,7 @@ body {
 	width: 100%;
 	z-index: 1;
 	height: 70px;
-	background-color: rgba(255,255,255,1);
+	background-color: rgba(255,255,255,0.8);
 	vertical-align: middle;
 	padding: 10px 30px;
 }
@@ -79,6 +79,10 @@ body {
 	margin-top: 100px;
 	padding-top: 15px; 
 	background-color: rgb(225,225,225);
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
 }
 
 /********** MAIN PAGE ***********/
