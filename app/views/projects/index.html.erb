@@ -1,8 +1,9 @@
 <div class="container project-all">
-	<div class="project-top collapse" href="#collapseOne">
+	<div class="project-top">
 		Projects
 		<hr>
 	</div>
+
 	<div class="row project-each">
 		<div class="col-md-4 col-sm-6 col-xs-12 project-box">
 			<div class="project-title">
@@ -47,7 +48,9 @@
 	<% if @products.size > 3 %>
 		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreProduct">
-		    Read more
+        <div class="read-more">
+          Read more
+        </div>
 			</a>
 		</div>
 	<% end %>
@@ -92,7 +95,9 @@
 	<% if @collaborations.size > 2 %>
 		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreCollaboration">
-		    Read more
+        <div class="read-more">
+          Read more
+        </div>
 			</a>
 		</div>
 	<% end %>
@@ -139,7 +144,9 @@
 	<% if @consultings.size > 2 %>
 		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreConsulting">
-		    Read more
+        <div class="read-more">
+          Read more
+        </div>
 			</a>
 		</div>
 	<% end %>

@@ -51,8 +51,6 @@
         <% end %>
       <% end %>
     <% end %>
-	
-
 
     <div id="moreProject" class="accordion-body collapse">
       <% @projects.each_with_index do |project, index| %>
@@ -69,15 +67,17 @@
         <% end %>
       <% end %>
     </div>
-
-    <% if @projects.size > 6 %>
-      <div class="row">
-        <a class="accordion-toggle" data-toggle="collapse" href="#moreProject">
-          Read more
-        </a>
-      </div>
-    <% end %>
   </div>
+
+  <% if @projects.size > 6 %>
+    <div class="row">
+      <a class="accordion-toggle" data-toggle="collapse" href="#moreProject">
+        <div class="read-more">
+          Read more
+        </div>
+      </a>
+    </div>
+  <% end %>
 </div>
 
 
