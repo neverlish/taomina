@@ -1,7 +1,16 @@
 source 'https://rubygems.org'
 
+gem 'nokogiri'
+gem 'figaro'
+gem "bootstrap_flash_messages", "~> 1.0.1"
+gem 'font-awesome-sass'
+gem 'summernote-rails', '0.8.1.1'
+gem 'codemirror-rails'
+gem 'simple_form'
+gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record

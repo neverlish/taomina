@@ -1,1 +1,75 @@
-projects
+<div class="container project-all">
+	<div class="project-top">
+		Projects
+		<hr>
+	</div>
+
+	<div class="row project-each">
+		<div class="col-md-4 project-box">
+			<div class="project-title">
+				Products
+				<div class="project-title-text text-right">
+					Eco-friendly<br>Traditional<br>Cutting-edge
+				</div>
+			</div>
+		</div>
+		<% @products.each do |product| %>
+			<%= link_to project_path(product) do %>
+				<div class="col-md-4 project-box">
+					<div class="project-box-image"  style="background: url('<%= product.imageurls[0] %>') center; ">
+					</div>
+					<div class="project-box-title">
+						<%= product.name %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<div class="row project-each">
+		<div class="col-md-4 project-box text-right" style="float: right;">
+			<div class="project-title">
+				Collaborations
+				<div class="project-title-text text-right">
+					Eco-friendly<br>Traditional<br>Cutting-edge
+				</div>
+			</div>
+		</div>
+		<% @collaborations.each do |collaboration| %>
+			<%= link_to project_path(collaboration) do %>
+				<div class="col-md-4 project-box">
+					<div class="project-box-image" style="background: url('<%= collaboration.imageurls[0] %>') center;">
+					</div>
+					<div class="project-box-title">
+						<%= collaboration.name %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<div class="row project-each">
+		<div class="col-md-4 project-box">
+			<div class="project-title">		
+				Consultings
+				<div class="project-title-text text-right">
+					Eco-friendly<br>Traditional<br>Cutting-edge
+				</div>
+			</div>
+		</div>
+		<% @consultings.each do |consulting| %>
+			<%= link_to project_path(consulting) do %>
+				<div class="col-md-4 project-box">
+					<div class="project-box-image"  style="background: url('<%= consulting.imageurls[0] %>') center;">
+					</div>
+					<div class="project-box-title">
+						<%= consulting.name %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+		<br><br>
+	</div>
+
+	<%= link_to 'New project', new_project_path, class: 'btn btn-default' %>
+</div>

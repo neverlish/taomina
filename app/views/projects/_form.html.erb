@@ -1,0 +1,15 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :category, collection: Project.categories.keys %>
+    <%= f.input :name, label: false, placeholder: "Project name" %>
+    <%= f.input :text, label: false, as: :summernote %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Show', @project, class: 'btn btn-default' %> 
+    <%= link_to 'Back', projects_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

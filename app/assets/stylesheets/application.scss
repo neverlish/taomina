@@ -16,6 +16,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "summernote";
+@import "projects";
 
 body {
 	font-family: 'Raleway', sans-serif;
@@ -115,4 +117,52 @@ body {
 	font-size: 18px;
 	color: black;
 	font-weight: bolder;
+}
+
+
+/********** PROJECT ***********/
+.project-all {
+	padding: 0 50px;
+	/*border: 1px solid blue;*/
+}
+
+.project-top {
+	font-size: 50px;
+	padding-top: 200px;
+	margin-bottom: 50px;
+}
+
+.project-each {
+	margin-bottom: 50px;
+}
+
+.project-box {
+	height: 240px;
+	/*border: 1px solid red;*/
+	padding: 0 20px;
+	color: black;
+}
+
+.project-title {
+	height: 100%;
+	padding: 15px 15px 0 15px;
+	border: 1px solid black;
+	font-size: 32px;
+	color: black;
+}
+
+.project-title-text {
+	margin-top: 85px;
+	font-size: 17px;
+}
+
+.project-box-title {
+	font-size: 25px;
+}
+
+.project-box-image {
+	height: 87%;
+	/*border: 1px solid blue;*/
+	background-size: contain; 
+	background-size: cover; 
 }
