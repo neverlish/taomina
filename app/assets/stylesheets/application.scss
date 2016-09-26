@@ -141,6 +141,7 @@ body {
 	/*border: 1px solid red;*/
 	padding: 0 20px;
 	color: black;
+	margin: 10px 0;
 }
 
 .project-title {
@@ -158,11 +159,12 @@ body {
 
 .project-box-title {
 	font-size: 25px;
+	text-align: center;
 }
 
 .project-box-image {
 	height: 87%;
-	/*border: 1px solid blue;*/
-	background-size: contain; 
-	background-size: cover; 
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat; 
 }
