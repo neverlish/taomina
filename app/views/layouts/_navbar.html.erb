@@ -1,4 +1,11 @@
 <div class="custom-navbar-top">	
+	<% if user_signed_in? %>
+		<%= link_to destroy_user_session_path, method: :delete do %>
+			<span class="navbar-menu-right">
+				Logout
+			</span>
+		<% end %>
+	<% end %>
 	<%= link_to root_path do %>
 		<span class="navbar-menu-right">
 			<span>SHOP</span>
