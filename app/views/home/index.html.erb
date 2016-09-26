@@ -38,18 +38,44 @@
 
 <div class="container">
 	<div class="row" style="margin-top: 90px;">
-		<% @projects.each do |project| %>
-      <%= link_to project_path(project) do %>
-        <div class="col-md-4 col-sm-6 col-xs-12 project-box">
-          <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
+		<% @projects.each_with_index do |project, index| %>
+      <% if index < 6 %>
+        <%= link_to project_path(project) do %>
+          <div class="col-md-4 col-sm-6 col-xs-12 project-box">
+            <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
+            </div>
+            <div class="project-box-title">
+              <%= project.name %>
+            </div>
           </div>
-          <div class="project-box-title">
-            <%= project.name %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
-	</div>
+	
+
+
+    <div id="moreProject" class="accordion-body collapse">
+      <% @projects.each_with_index do |project, index| %>
+        <% if index >= 6 %>
+          <%= link_to project_path(project) do %>
+            <div class="col-md-4 col-sm-6 col-xs-12 project-box">
+              <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
+              </div>
+              <div class="project-box-title">
+                <%= project.name %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% if @projects.size > 6 %>
+      <a class="accordion-toggle" data-toggle="collapse" href="#moreProject">
+        Read more
+      </a>
+    <% end %>
+  </div>
 </div>
 
 

@@ -1,9 +1,8 @@
 <div class="container project-all">
-	<div class="project-top">
+	<div class="project-top collapse" href="#collapseOne">
 		Projects
 		<hr>
 	</div>
-
 	<div class="row project-each">
 		<div class="col-md-4 col-sm-6 col-xs-12 project-box">
 			<div class="project-title">
@@ -13,17 +12,43 @@
 				</div>
 			</div>
 		</div>
-		<% @products.each do |product| %>
-			<%= link_to project_path(product) do %>
-				<div class="col-md-4 col-sm-6 col-xs-12 project-box">
-					<div class="project-box-image"  style="background-image: url('<%= product.imageurls[0] %>'); ">
+
+		<% @products.each_with_index do |product, index| %>
+			<% if index > 5 %>
+				<%= link_to project_path(product) do %>
+					<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+						<div class="project-box-image"  style="background-image: url('<%= product.imageurls[0] %>'); ">
+						</div>
+						<div class="project-box-title">
+							<%= product.name %>
+						</div>
 					</div>
-					<div class="project-box-title">
-						<%= product.name %>
-					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
+
+		<div id="moreProduct" class="accordion-body collapse">
+  		<% @products.each_with_index do |product, index| %>
+				<% if index >= 2 %>
+					<%= link_to project_path(product) do %>
+						<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+							<div class="project-box-image" style="background-image: url('<%= product.imageurls[0] %>');">
+							</div>
+							<div class="project-box-title">
+								<%= product.name %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<% if @products.size > 2 %>
+			<a class="accordion-toggle" data-toggle="collapse" href="#moreProduct">
+		    Read more
+			</a>
+		<% end %>
+
 	</div>
 
 	<div class="row project-each">
@@ -32,16 +57,40 @@
 				Collaborations
 			</div>
 		</div>
-		<% @collaborations.each do |collaboration| %>
-			<%= link_to project_path(collaboration) do %>
-				<div class="col-md-4 col-sm-6 col-xs-12 project-box">
-					<div class="project-box-image" style="background-image: url('<%= collaboration.imageurls[0] %>');">
+		<% @collaborations.each_with_index do |collaboration, index| %>
+			<% if index < 2 %>
+				<%= link_to project_path(collaboration) do %>
+					<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+						<div class="project-box-image" style="background-image: url('<%= collaboration.imageurls[0] %>');">
+						</div>
+						<div class="project-box-title">
+							<%= collaboration.name %>
+						</div>
 					</div>
-					<div class="project-box-title">
-						<%= collaboration.name %>
-					</div>
-				</div>
+				<% end %>
 			<% end %>
+		<% end %>
+
+		<div id="moreCollaboration" class="accordion-body collapse">
+  		<% @collaborations.each_with_index do |collaboration, index| %>
+				<% if index >= 2 %>
+					<%= link_to project_path(collaboration) do %>
+						<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+							<div class="project-box-image" style="background-image: url('<%= collaboration.imageurls[0] %>');">
+							</div>
+							<div class="project-box-title">
+								<%= collaboration.name %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<% if @collaborations.size > 2 %>
+			<a class="accordion-toggle" data-toggle="collapse" href="#moreCollaboration">
+		    Read more
+			</a>
 		<% end %>
 	</div>
 
@@ -51,19 +100,44 @@
 				Consultings
 			</div>
 		</div>
-		<% @consultings.each do |consulting| %>
-			<%= link_to project_path(consulting) do %>
-				<div class="col-md-4 col-sm-6 col-xs-12 project-box">
-					<div class="project-box-image"  style="background-image: url('<%= consulting.imageurls[0] %>');">
+
+		<% @consultings.each_with_index do |consulting, index| %>
+			<% if index < 2 %>
+				<%= link_to project_path(consulting) do %>
+					<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+						<div class="project-box-image"  style="background-image: url('<%= consulting.imageurls[0] %>');">
+						</div>
+						<div class="project-box-title">
+							<%= consulting.name %>
+						</div>
 					</div>
-					<div class="project-box-title">
-						<%= consulting.name %>
-					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
-		<br><br>
+
+		<div id="moreConsulting" class="accordion-body collapse">
+  		<% @consultings.each_with_index do |consulting, index| %>
+				<% if index >= 2 %>
+					<%= link_to project_path(consulting) do %>
+						<div class="col-md-4 col-sm-6 col-xs-12 project-box">
+							<div class="project-box-image" style="background-image: url('<%= consulting.imageurls[0] %>');">
+							</div>
+							<div class="project-box-title">
+								<%= consulting.name %>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<% if @consultings.size > 2 %>
+			<a class="accordion-toggle" data-toggle="collapse" href="#moreConsulting">
+		    Read more
+			</a>
+		<% end %>
 	</div>
+
 	<% if user_signed_in? %>
 		<%= link_to 'New project', new_project_path, class: 'btn btn-default' %>
 	<% end %>
