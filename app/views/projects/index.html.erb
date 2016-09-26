@@ -14,7 +14,7 @@
 		</div>
 
 		<% @products.each_with_index do |product, index| %>
-			<% if index > 5 %>
+			<% if index < 5 %>
 				<%= link_to project_path(product) do %>
 					<div class="col-md-4 col-sm-6 col-xs-12 project-box">
 						<div class="project-box-image"  style="background-image: url('<%= product.imageurls[0] %>'); ">
@@ -29,7 +29,7 @@
 
 		<div id="moreProduct" class="accordion-body collapse">
   		<% @products.each_with_index do |product, index| %>
-				<% if index >= 2 %>
+				<% if index >= 5 %>
 					<%= link_to project_path(product) do %>
 						<div class="col-md-4 col-sm-6 col-xs-12 project-box">
 							<div class="project-box-image" style="background-image: url('<%= product.imageurls[0] %>');">
