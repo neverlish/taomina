@@ -42,14 +42,15 @@
 				<% end %>
 			<% end %>
 		</div>
+	</div>
 
-		<% if @products.size > 2 %>
+	<% if @products.size > 3 %>
+		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreProduct">
 		    Read more
 			</a>
-		<% end %>
-
-	</div>
+		</div>
+	<% end %>
 
 	<div class="row project-each">
 		<div class="col-md-4 col-sm-6 col-xs-12 project-box text-right" style="float:right;">
@@ -86,13 +87,16 @@
 				<% end %>
 			<% end %>
 		</div>
+	</div>
 
-		<% if @collaborations.size > 2 %>
+	<% if @collaborations.size > 2 %>
+		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreCollaboration">
 		    Read more
 			</a>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
+
 
 	<div class="row project-each">
 		<div class="col-md-4 col-sm-6 col-xs-12 project-box">
@@ -130,13 +134,16 @@
 				<% end %>
 			<% end %>
 		</div>
+	</div>
 
-		<% if @consultings.size > 2 %>
+	<% if @consultings.size > 2 %>
+		<div class="row">
 			<a class="accordion-toggle" data-toggle="collapse" href="#moreConsulting">
 		    Read more
 			</a>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
+
 
 	<% if user_signed_in? %>
 		<%= link_to 'New project', new_project_path, class: 'btn btn-default' %>
