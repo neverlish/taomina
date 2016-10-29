@@ -12,11 +12,10 @@
 
   <body>
   	<%= render 'layouts/navbar' %>
-  	<div style="margin-top: 70px;">
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
-    </div>
-    <div class="text-center navbar-footer">
-      <span>All rigths reserved, © 2015 TAOMINA.</span>
-    </div>
+    
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,0 +1,14 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <!-- #f.input :category, label: false, collection: Post.categories.keys -->
+    <%= f.input :title, label: false, placeholder: "Post name" %>
+    <%= f.input :text, label: false, as: :summernote %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Back', root_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="project-top">
+    <b>Shop</b>
+    <div class="text-right project-top-right">
+      You can buy sustainable-design product here.
+    </div>
+    <hr class="project-top-hr">
+  </div>
+  <%= link_to 'Go to my cart', cart_path, class: 'btn btn-default' %>
+
+	<div class="row" style="margin: 0 0 90px 0;">
+		<% @projects.each_with_index do |project, index| %>
+      <%= link_to url_for(controller: "home", action: "shopitem", id: project.id) do %>
+        <div class="col-md-4 col-sm-6 col-xs-12 project-box">
+          <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
+          </div>
+          <div class="project-box-title">
+            <%= project.name %>
+          </div>
+          <div class="text-center">
+            $<%= project.price %>
+          </div>
+        </div>
+      <% end %>    
+    <% end %>
+  </div>
+</div>

@@ -1,32 +1,40 @@
 <div class="custom-navbar-top">	
-	<% if user_signed_in? %>
-		<%= link_to destroy_user_session_path, method: :delete do %>
-			<span class="navbar-menu-right">
-				Logout
-			</span>
-		<% end %>
-	<% end %>
-	<%= link_to root_path do %>
-		<span class="navbar-menu-right">
-			<span>SHOP</span>
-			<!-- <hr class="navbar-hr navbar-shop"> -->
-		</span>
-	<% end %>
-	<%= link_to projects_path do %>
-		<span class="navbar-menu-right">
-			<span>PROJECT</span>
-			<!-- <hr class="navbar-hr navbar-project"> -->
-		</span>
-	<% end %>
-	<%= link_to about_path do %>
-		<span class="navbar-menu-right">
-			<span>ABOUT</span>
-			<!-- <hr class="navbar-hr navbar-about"> -->
-		</span>	
-	<% end %>
 	<%= link_to root_path do %>
 		<span class="navbar-menu-left">
 			<%= image_tag "logo", height: "20px" %>
 		</span>
+	<% end %>
+
+	<% if user_signed_in? %>
+		<%= link_to destroy_user_session_path, method: :delete do %>
+			<span class="navbar-menu-right">
+				LOGOUT
+			</span>
+		<% end %>
+	<% else %>
+		<%= link_to new_user_session_path do %>
+			<span class="navbar-menu-right">
+				LOGIN
+			</span>
+		<% end %>
+	<% end %>
+	<%= link_to contact_path do %>
+		<span class="navbar-menu-right">
+			<span>CONTACT</span>
+		</span>
+	<% end %>
+	<%= link_to shop_path do %>
+		<span class="navbar-menu-right">
+			<span>SHOP</span>
+		</span>
+	<% end %>
+		<!-- <span class="navbar-menu-right"> -->
+			<!-- <span>PROJECT</span> -->
+			<!-- <hr class="navbar-hr navbar-project"> -->
+		<!-- </span> -->
+	<%= link_to about_path do %>
+		<span class="navbar-menu-right">
+			<span>ABOUT</span>
+		</span>	
 	<% end %>
 </div>

@@ -1,0 +1,32 @@
+<div class="container">
+	<h2><%= @post.title %></h2>
+	<%= raw @post.text %>
+	<hr>
+	<% if @post.user == current_user %>
+		<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+	<% end %>
+</div>
+
+<!-- <div class="container" style="margin-top: 100px">
+Imprint
+
+Issuer:
+
+TAOMINA
+Sven Schelwach
+Untergasse 30A
+D-67592 Flörsheim – Dalsheim
+
+Phone: +49 177 362373 / + 82 10 3735 9219
+E-Mail: info [at] taomina.de / info [at] taomina.com
+
+Ust.ID – DE248880685
+
+ 
+
+Verantwortlich für den Inhalt nach §10 MDStV:
+TAOMINA – Sven Schelwach
+Haftungsausschluss
+
+Die Zusammenstellung der Informationen auf dieser Website wurde mit größtmöglicher Sorgfalt vorgenommen. Dennoch kann keine Gewähr für die Qualität der bereitgestellten Informationen übernommen werden. Eine Haftung für die Inhalte wird nicht übernommen. Der Haftungsausschluß bezieht auch die Inhalte externer Links mit ein. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Mit Urteil vom 12. Mai 1998 (AZ 312 0 85/98) hat das Landgericht Hamburg entschieden, daß man durch die Einbindung eines Links gegebenenfalls für die Inhalte der gelinkten Seite mit zu verantworten hat. Auch TAOMINA hat auf verschiedenen Seiten Links zu anderen Seiten im Internet. Wir möchten ausdrücklich betonen, daß wir keinen Einfluß auf die Gestaltung und die Inhalte dieser gelinkten Seite haben. Deshalb distanzieren wir uns ausdrücklich von allen Inhalten aller gelinkten Seiten und machen uns ihre Inhalte nicht zu eigen.
+</div> -->

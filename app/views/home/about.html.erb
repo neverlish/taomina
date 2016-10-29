@@ -1,4 +1,13 @@
 <div class="container">
+	<h2><%= @post.title %></h2>
+	<%= raw @post.text %>
+	<hr>
+	<% if @post.user == current_user %>
+		<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+	<% end %>
+</div>
+
+<!-- <div class="container">
 	<div>
 	<p class="about-title">About</p>
 
@@ -52,4 +61,4 @@
 
 	The word TAOMINA has a meaning that roughly translates as the language of the creation, or the love of the right way. For us TAOMINA is also the embodiment of long-lasting and timeless design.
 	</div>
-</div>
+</div> -->

@@ -3,9 +3,9 @@ class ProjectsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	def index
 		@projects = Project.all
-		@products = Project.where(category: "Product")
-		@collaborations = Project.where(category: "Collaboration")
-		@consultings = Project.where(category: "Consulting")
+		# @products = Project.where(category: "Product")
+		# @collaborations = Project.where(category: "Collaboration")
+		# @consultings = Project.where(category: "Consulting")
 	end
 
 	def new
@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new(project_params)
+		@project.user = current_user
 		if @project.save
 			redirect_to @project
 		else
@@ -42,7 +43,7 @@ class ProjectsController < ApplicationController
 
 	private
 	def project_params
-		params.require(:project).permit(:name, :text, :category)
+		params.require(:project).permit(:name, :text, :price, :user_id)
 	end
 
 	def set_project
