@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
 	# enum category: {Product:0, Collaboration:1, Consulting: 2}
 	belongs_to :user
-	has_many :carts
+	has_many :carts, dependent: :destroy
 
 	has_attached_file :image
 

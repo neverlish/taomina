@@ -1,4 +1,4 @@
-<div style="background-color: blue; height: 300px; margin-bottom: 70px; margin-top: -50px; color: white; font-size: 60px; padding: 100px 0 0 40px;">CART</div>
+<div class="project-top">CART</div>
 <h1 class="text-center">Your cart</h1>
 <hr>
 <div class="container">
@@ -10,42 +10,78 @@
 		<% total = 0 %>
 		<ul>
 		<% @cart.each do |each| %>
-			<div style="border: 1px solid #ebebeb; height: 350px; width: 100%; margin-bottom: 30px;">
-				<%= link_to each.project.name, project_path(each.project.id) %>
-				<hr>
-				<div class="project-box-image" style="background-image: url('<%= each.project.imageurls[0] %>'); height: 100px; width: 100px; border: 1px solid #ebebeb;"></div>
-				<div class="row" style="padding: 20px;">
-					<div class="col-md-4 text-center" style="margin:0; padding-right: 0;">
-						
-						<div style="background-color: #ebebeb; width: 100%">판매가</div>
-						<p><%= number_to_currency(each.project.price, unit: '$') %></p>
+			<div class="cart-each-box">
+				<div class="cart-each-box-title">
+					<%= link_to each.project.name, project_path(each.project.id) %>
+				</div>
+				<div class="row">
+					<div class="cart-each-box-left col-md-3 col-sm-3 col-xs-3">
+						<div class="cart-each-box-image project-box-image" style="background-image: url('<%= each.project.imageurls[0] %>');"></div>
 					</div>
-					<div class="col-md-4 text-center" style="margin:0; padding: 0;">
-						<div style="background-color: #ebebeb;">수량</div>
-						<%= each.quantity %>
-					</div>
-					<div class="col-md-4 text-center" style="margin:0; padding-left: 0;">
-						<div style="background-color: #ebebeb; width: 100%">배송비</div>
-						FREE
+					<div class="cart-each-box-right col-md-9 col-sm-9 col-xs-9">
+						<div class="row" style="padding: 20px;">
+							<div class="cart-each-table-column col-md-4 text-center">
+								
+								<div class="cart-each-table-title">
+									판매가
+								</div>
+								<div class="cart-each-table-content">
+									<%= number_to_currency(each.project.price, unit: '$') %>
+								</div>
+							</div>
+							<div class="cart-each-table-column col-md-4 text-center">
+								<div class="cart-each-table-title">
+									수량
+								</div>
+								<div class="cart-each-table-content">
+									<%= each.quantity %>
+								</div>
+							</div>
+							<div class="cart-each-table-column col-md-4 text-center">
+								<div class="cart-each-table-title">
+									배송비
+								</div>
+								<div class="cart-each-table-content">
+									FREE
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							$<%= each.quantity * each.project.price %>
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								소계
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								<% total += each.quantity * each.project.price %>
+							</div>
+						</div>
 					</div>
 				</div>
-				<hr>
-				소계
-				$<%= each.quantity * each.project.price %>
-				<% total += each.quantity * each.project.price %>
+				
 			</div>
 		<% end %>
-		<div class="text-right"> 
-			<%= link_to 'Empty your cart', cart_clear_path %>
+		<div class="text-right" style="margin-top: -10px;"> 
+			<%= link_to 'Empty your cart', cart_clear_path, class: 'btn btn-default' %>
 		</div>
 
-		<div style="background-color: #ebebeb; height: 200px; width: 100%">
-		
-		Shipping charge
-		free
-		TOTAL
-			<p><b><%= number_to_currency(total, unit: '$') %></b></p>
-		
+		<div class="cart-bottom">
+			<div class="row">
+				<div class="cart-bottom-left col-md-8 col-sm-8 col-sx-8">
+				Price Charge <b><%= number_to_currency(total, unit: '$') %></b>
+				<br>
+				<br>
+				Shipping Charge Free
+				</div>
+				<div class="cart-bottom-right col-md-4 col-sm-4 col-sx-4">
+					<br><b>Total 
+					<span style="color: red;"><%= number_to_currency(total, unit: '$') %></b></span>
+				</div>
+			</div>
+		</div>
 	<% end %>
 	</ul>
 </div>
