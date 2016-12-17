@@ -1,16 +1,18 @@
 <div class="container">
-	<h2><%= @post.title %></h2>
-	<%= raw @post.text %>
-	<hr>
-	<% if @post.user == current_user %>
-		<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+	<% if @post %>
+		<h2><%= @post.title %></h2>
+		<%= raw @post.text %>
+		<hr>
+		<% if @post.user == current_user %>
+			<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+		<% end %>
 	<% end %>
 </div>
 
 <!-- <div class="container" style="margin-top: 100px;">
 CONTACT
 
- 
+
 
 TAOMINA
 
@@ -21,7 +23,7 @@ Untergasse 30a
 67592 Flörsheim-Dalsheim
 +49 177 3623733
 
- 
+
 
 South Korea:
 Jogno-gu Myungryun 1-ga 1-11

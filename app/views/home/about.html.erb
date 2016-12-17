@@ -1,9 +1,11 @@
 <div class="container">
-	<h2><%= @post.title %></h2>
-	<%= raw @post.text %>
-	<hr>
-	<% if @post.user == current_user %>
-		<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+	<% if @post %>
+		<h2><%= @post.title %></h2>
+		<%= raw @post.text %>
+		<hr>
+		<% if @post.user == current_user %>
+			<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+		<% end %>
 	<% end %>
 </div>
 
@@ -18,7 +20,7 @@
 
 	To ensure the best product and service quality possible, we are part of an international business partner network.<br><br>
 	</div>
-	 
+
 	<div>
 	<p class="about-title">Mission, Vision, and Culture</p>
 
@@ -36,7 +38,7 @@
 
 	For us TAOMINA is the embodiment of long-lasting, sound product and process design, teamwork, a customer-centered approach, diversity, fun, a healthy work environment, and customer satisfaction. This creates a culture of collaboration and of high performance.<br><br>
 	</div>
-	 
+
 	<div>
 	<p class="about-title">The meaning of the word TAOMINA: ~ tao-mina</p>
 
@@ -48,7 +50,7 @@
 
 	TAOMINA creates cutting edge works, commissioned pieces, and provides sustainable design consulting services.<br><br>
 
-	 
+
 	<div>
 	<p class="about-title">TAOMINA ~ tao-mina:</p>
 

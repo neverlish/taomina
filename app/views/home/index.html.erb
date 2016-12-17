@@ -1,6 +1,6 @@
 <div>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
-   
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" style="max-height: 100vh;">
       <div class="item active">
@@ -41,7 +41,7 @@
             <%= project.name %>
           </div>
         </div>
-      <% end %>    
+      <% end %>
     <% end %>
   </div>
   <div class="row text-center">
@@ -49,13 +49,15 @@
       <%= link_to 'New project', new_project_path, class: 'btn btn-default' %>
     <% end %>
   </div>
-  
-  <%= raw @post.text %>
-  <hr>
-  <% if @post.user == current_user %>
-    <div class="text-center">
-      <%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
-    </div>
+
+  <% if @post %>
+    <%= raw @post.text %>
+    <hr>
+    <% if @post.user == current_user %>
+      <div class="text-center">
+        <%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+      </div>
+    <% end %>
   <% end %>
 
 </div>

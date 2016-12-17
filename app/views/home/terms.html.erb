@@ -1,9 +1,11 @@
 <div class="container">
-	<h2><%= @post.title %></h2>
-	<%= raw @post.text %>
-	<hr>
-	<% if @post.user == current_user %>
-		<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+	<% if @post %>
+		<h2><%= @post.title %></h2>
+		<%= raw @post.text %>
+		<hr>
+		<% if @post.user == current_user %>
+			<%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+		<% end %>
 	<% end %>
 </div>
 
