@@ -19,6 +19,11 @@
 @import "summernote";
 @import "projects";
 
+
+* {
+	padding: 0;
+	margin: 0;
+}
 body {
 	font-family: 'Raleway', sans-serif;
 	color: gray;
