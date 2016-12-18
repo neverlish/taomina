@@ -1,17 +1,23 @@
 <div class="navbar-footer">
-	<%= link_to terms_of_use_path do %>
-		<span class="footer-menu-left">
-			<span>Terms of Use</span>
-		</span>
-	<% end %>
-	<%= link_to imprint_path do %>
-		<span class="footer-menu-left">
-			<span>Imprint</span>
-		</span>
-	<% end %>
-		<%= link_to about_path do %>
-		<span class="footer-menu-right">
-			All rigths reserved, © 2015 TAOMINA.
-		</span>	
-	<% end %>
+	<div class="container-fluid">
+		<div class="col-md-3 col-sm-4 col-xs-12 text-center">
+			<%= link_to terms_of_use_path do %>
+				<span class="footer-menu-left">
+					<span>Terms of Use</span>
+				</span>
+			<% end %>
+			<%= link_to imprint_path do %>
+				<span class="footer-menu-left">
+					<span>Imprint</span>
+				</span>
+			<% end %>
+		</div>
+		<div class="col-md-5 col-sm-3 col-xs-0">
+		</div>
+		<div class="col-md-4 col-sm-5 col-xs-12 text-center">
+			<span class="">
+				All rigths reserved, © 2015 TAOMINA.
+			</span>
+		</div>
+	</div>
 </div>
