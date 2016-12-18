@@ -6,12 +6,12 @@
 </div>
 <div class="container-fluid" style="padding: 0;">
   <div class="row">
-    <%= link_to 'Go to my cart', cart_path, class: 'btn btn-default', style: "margin-left: 50px;" %>
+    <%= link_to 'Go to my cart', cart_index_path, class: 'btn btn-default', style: "margin-left: 50px;" %>
   </div>
   <div class="row" style="margin: 70px 0;">
     <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="padding: 0;">
   		<% @projects.each_with_index do |project, index| %>
-        <%= link_to project_path(project) do %>
+        <%= link_to url_for(controller: "home", action: "shopitem", id: project.id) do %>
           <div class="project-box col-md-4 col-sm-6 col-xs-12">
             <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="height: 100%; padding: 0;">
               <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">

@@ -10,7 +10,8 @@
 		<% @cart.each do |each| %>
 			<div class="cart-each-box">
 				<div class="cart-each-box-title">
-					<%= link_to each.project.name, project_path(each.project.id) %>
+					<%= link_to each.project.name, "/shop/#{each.project.id}" %>
+					<%= link_to "delete", each, method: :delete, style: "float: right; margin-right: 20px;" %>
 				</div>
 				<div class="row">
 					<div class="cart-each-box-left col-md-3 col-sm-3 col-xs-3">

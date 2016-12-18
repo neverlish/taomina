@@ -58,13 +58,15 @@
   </div>
   <div class="row">
     <% if @post %>
-      <%= raw @post.text %>
-      <hr>
-      <% if @post.user == current_user %>
-        <div class="text-center">
-          <%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
-        </div>
-      <% end %>
+      <div class="col-md-12 col-xs-12">
+        <%= raw @post.text %>
+        <hr>
+        <% if @post.user == current_user %>
+          <div class="text-center">
+            <%= link_to 'Edit', edit_post_path(@post) , class: 'btn btn-default'%>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

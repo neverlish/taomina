@@ -15,6 +15,9 @@ class CartController < ApplicationController
 	end
 
 	def destroy
+		@cart = Cart.find(params[:id])
+		@cart.destroy
+		redirect_to cart_index_path
 	end
 	# def add
 	# 	id = params[:id]
@@ -32,9 +35,6 @@ class CartController < ApplicationController
 	# 	end
 	# 	redirect_to :action => :index
 	# end
-	def destroy
-
-	end
 	def clearCart
 		session[:cart] = nil
 		redirect_to :action => :index
