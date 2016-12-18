@@ -1,7 +1,7 @@
 <div class="navbar navbar-default navbar-fixed-top custom-navbar-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float: right; border: 0; margin: 0 -10px 0 0;">
 				<%= image_tag "navbar_icon", height: "20px" %>
 			</button>
 			<%= link_to root_path do %>
@@ -13,21 +13,21 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
-					<%= link_to "ABOUT", about_path, style: "background-color: white;"  %>
+					<%= link_to "ABOUT", about_path, style: "background-color: rgba(255,255,255,0);"  %>
 				</li>
 				<li>
-					<%= link_to "SHOP", shop_path, style: "background-color: white;"  %>
+					<%= link_to "SHOP", shop_path, style: "background-color: rgba(255,255,255,0);"  %>
 				</li>
 				<li>
-					<%= link_to "CONTACT", contact_path, style: "background-color: white;"  %>
+					<%= link_to "CONTACT", contact_path, style: "background-color: rgba(255,255,255,0);"  %>
 				</li>
 				<% if user_signed_in? %>
 					<li>
-						<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, style: "background-color: white;"  %>
+						<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, style: "background-color: rgba(255,255,255,0);"  %>
 					</li>
 				<% else %>
 					<li>
-						<%= link_to "LOGIN", new_user_session_path, style: "background-color: white;" %>
+						<%= link_to "LOGIN", new_user_session_path, style: "background-color: rgba(255,255,255,0);" %>
 					</li>
 				<% end %>
 			</ul>
