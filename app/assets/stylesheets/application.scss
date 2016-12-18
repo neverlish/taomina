@@ -194,10 +194,10 @@ body {
 
 .project-box {
 	height: 240px;
-	/*border: 1px solid red;*/
 	padding: 0 20px;
 	color: black;
 	margin: 10px 0 50px 0;
+	padding: 0;
 }
 
 
@@ -229,6 +229,7 @@ body {
 
 .project-box-image {
 	height: 87%;
+	margin:0;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
