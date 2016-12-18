@@ -32,12 +32,18 @@
 
 <div class="container-fluid" style="padding: 0;">
 	<div class="row" style="margin: 70px 0;">
-    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="padding: 0; border: 1px solid red;">
+    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="padding: 0;">
   		<% @projects.each_with_index do |project, index| %>
         <%= link_to project_path(project) do %>
-          <div class="col-md-4 col-sm-6 col-xs-12 project-box" style="margin: 0;">
+          <div class="project-box col-md-4 col-sm-6 col-xs-12 ">
             <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="height: 100%; padding: 0;">
-              <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>'); border: 1px solid blue;">
+              <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
+              </div>
+              <div class="project-box-title">
+                <%= project.name %>
+              </div>
+              <div class="project-box-price text-center">
+                $<%= project.price %>
               </div>
             </div>
           </div>

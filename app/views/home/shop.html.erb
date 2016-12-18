@@ -11,7 +11,7 @@
 	<div class="row">
 		<% @projects.each do |project, index| %>
       <%= link_to url_for(controller: "home", action: "shopitem", id: project.id) do %>
-        <div class="col-md-4 col-sm-6 col-xs-12 project-box"">
+        <div class="col-md-4 col-sm-6 col-xs-12 project-box">
           <div class="project-box-image" style="background-image: url('<%= project.imageurls[0] %>');">
           </div>
           <div class="project-box-title">
@@ -21,7 +21,7 @@
             $<%= project.price %>
           </div>
         </div>
-      <% end %>    
+      <% end %>
     <% end %>
   </div>
 </div>

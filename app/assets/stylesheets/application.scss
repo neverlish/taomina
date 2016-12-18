@@ -19,13 +19,13 @@
 @import "summernote";
 @import "projects";
 
-
 * {
 	padding: 0;
 	margin: 0;
 }
+
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	color: gray;
 	margin-top: 100px;
 }
@@ -108,9 +108,6 @@ body {
 	color: black;
 }
 
-
-
-
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
@@ -166,7 +163,6 @@ body {
 }
 
 .project-top {
-	/*font-family: 'LucidaGrande-bold', sans-serif;*/
 	background-color: black;
 	height: 256px;
 	font-size: 64px;
@@ -198,6 +194,7 @@ body {
 	color: black;
 	margin: 10px 0 50px 0;
 	padding: 0;
+	margin: 0 0 30px 0;
 }
 
 .project-title {
@@ -221,7 +218,6 @@ body {
 }
 
 .project-box-price {
-	font-family: Helvetica;
 	font-size: 18px;
 	color: #545353;
 }
@@ -230,7 +226,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background-size: 100% auto;
+	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 }
