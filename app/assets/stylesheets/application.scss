@@ -200,7 +200,6 @@ body {
 	padding: 0;
 }
 
-
 .project-title {
 	height: 100%;
 	padding: 15px 15px 0 15px;
@@ -228,9 +227,10 @@ body {
 }
 
 .project-box-image {
-	height: 87%;
-	margin:0;
-	background-size: contain;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: 100% auto;
 	background-position: center;
 	background-repeat: no-repeat;
 }
