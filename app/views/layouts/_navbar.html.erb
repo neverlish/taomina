@@ -1,40 +1,36 @@
-<div class="custom-navbar-top">	
-	<%= link_to root_path do %>
-		<span class="navbar-menu-left">
-			<%= image_tag "logo", height: "20px" %>
-		</span>
-	<% end %>
-
-	<% if user_signed_in? %>
-		<%= link_to destroy_user_session_path, method: :delete do %>
-			<span class="navbar-menu-right">
-				LOGOUT
-			</span>
-		<% end %>
-	<% else %>
-		<%= link_to new_user_session_path do %>
-			<span class="navbar-menu-right">
-				LOGIN
-			</span>
-		<% end %>
-	<% end %>
-	<%= link_to contact_path do %>
-		<span class="navbar-menu-right">
-			<span>CONTACT</span>
-		</span>
-	<% end %>
-	<%= link_to shop_path do %>
-		<span class="navbar-menu-right">
-			<span>SHOP</span>
-		</span>
-	<% end %>
-		<!-- <span class="navbar-menu-right"> -->
-			<!-- <span>PROJECT</span> -->
-			<!-- <hr class="navbar-hr navbar-project"> -->
-		<!-- </span> -->
-	<%= link_to about_path do %>
-		<span class="navbar-menu-right">
-			<span>ABOUT</span>
-		</span>	
-	<% end %>
+<div class="navbar navbar-default navbar-fixed-top custom-navbar-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<%= image_tag "navbar_icon", height: "20px" %>
+			</button>
+			<%= link_to root_path do %>
+				<span class="navbar-menu-left">
+					<%= image_tag "logo", height: "20px", style: "margin: 0 0 0 -30px;" %>
+				</span>
+			<% end %>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav" style="float: right;">
+				<li>
+					<%= link_to "ABOUT", about_path, style: "background-color: white;"  %>
+				</li>
+				<li>
+					<%= link_to "SHOP", shop_path, style: "background-color: white;"  %>
+				</li>
+				<li>
+					<%= link_to "CONTACT", contact_path, style: "background-color: white;"  %>
+				</li>
+				<% if user_signed_in? %>
+					<li>
+						<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, style: "background-color: white;"  %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to "LOGIN", new_user_session_path, style: "background-color: white;" %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
