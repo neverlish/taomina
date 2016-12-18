@@ -180,21 +180,13 @@ body {
 }
 
 
-.project-top-hr {
-
-}
-
-.project-each {
-	margin-bottom: 50px;
-}
-
 .project-box {
 	height: 240px;
 	padding: 0 20px;
 	color: black;
 	margin: 10px 0 50px 0;
 	padding: 0;
-	margin: 0 0 30px 0;
+	margin: 0 0 60px 0;
 }
 
 .project-title {
@@ -224,9 +216,9 @@ body {
 
 .project-box-image {
 	height: 100%;
-	margin: 0;
+	margin: 0 0 -30px 0;
 	padding: 0;
-	background-size: contain;
+	background-size: 100% 100% ;
 	background-position: center;
 	background-repeat: no-repeat;
 }

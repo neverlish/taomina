@@ -1,12 +1,10 @@
 <div class="project-top">CART</div>
-<h1 class="text-center">Your cart</h1>
-<hr>
 <div class="container">
-	
+
 	<% if @cart.nil? %>
 		<p>Your cart is currently empty</p>
 	<% else %>
-		
+
 		<% total = 0 %>
 		<ul>
 		<% @cart.each do |each| %>
@@ -21,7 +19,7 @@
 					<div class="cart-each-box-right col-md-9 col-sm-9 col-xs-9">
 						<div class="row" style="padding: 20px;">
 							<div class="cart-each-table-column col-md-4 text-center">
-								
+
 								<div class="cart-each-table-title">
 									판매가
 								</div>
@@ -53,7 +51,7 @@
 								소계
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4">
-								
+
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-4">
 								<% total += each.quantity * each.project.price %>
@@ -61,10 +59,10 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		<% end %>
-		<div class="text-right" style="margin-top: -10px;"> 
+		<div class="text-right" style="margin-top: -10px;">
 			<%= link_to 'Empty your cart', cart_clear_path, class: 'btn btn-default' %>
 		</div>
 
@@ -77,7 +75,7 @@
 				Shipping Charge Free
 				</div>
 				<div class="cart-bottom-right col-md-4 col-sm-4 col-sx-4">
-					<br><b>Total 
+					<br><b>Total
 					<span style="color: red;"><%= number_to_currency(total, unit: '$') %></b></span>
 				</div>
 			</div>
