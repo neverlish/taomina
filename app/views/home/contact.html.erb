@@ -1,6 +1,5 @@
 <div class="container">
 	<% if @post %>
-		<h2><%= @post.title %></h2>
 		<%= raw @post.text %>
 		<hr>
 		<% if @post.user == current_user %>
@@ -8,26 +7,3 @@
 		<% end %>
 	<% end %>
 </div>
-
-<!-- <div class="container" style="margin-top: 100px;">
-CONTACT
-
-
-
-TAOMINA
-
-info (at) taomina.com
-
-Germany:
-Untergasse 30a
-67592 Flörsheim-Dalsheim
-+49 177 3623733
-
-
-
-South Korea:
-Jogno-gu Myungryun 1-ga 1-11
-Yeonwha Building 202
-03066 Seoul
-+82 10 3735 9219
-</div> -->
