@@ -16,18 +16,19 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to @post
+      redirect_to :back
     else
       render :new
     end
   end
 
   def edit
+    session[:prev_url] = request.referer
   end
 
   def update
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to session[:prev_url]
     else
       render :edit
     end
