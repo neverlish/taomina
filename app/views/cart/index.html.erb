@@ -32,9 +32,13 @@
 								<div class="cart-each-table-title">
 									수량
 								</div>
+								<% if each.quantity >= 1 %>
+								<%= link_to "-", "/cart/#{each.id}/dec" %>
+								<% end %>
 								<div class="cart-each-table-content">
 									<%= each.quantity %>
 								</div>
+								<%= link_to "+", "/cart/#{each.id}/inc" %>
 							</div>
 							<div class="cart-each-table-column col-md-4 text-center">
 								<div class="cart-each-table-title">

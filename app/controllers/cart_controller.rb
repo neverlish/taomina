@@ -14,32 +14,33 @@ class CartController < ApplicationController
 		@cart = Cart.where(user: current_user)
 	end
 
+	def inc
+		@cart = Cart.find(params[:id])
+		quantity = @cart.quantity
+		@cart.update(quantity: quantity + 1)
+		redirect_to :back
+	end
+
+	def dec
+		@cart = Cart.find(params[:id])
+		quantity = @cart.quantity
+		@cart.update(quantity: quantity - 1)
+		redirect_to :back
+	end
+
 	def destroy
 		@cart = Cart.find(params[:id])
 		@cart.destroy
 		redirect_to cart_index_path
 	end
-	# def add
-	# 	id = params[:id]
-	# 	if session[:cart] then
-	# 		cart = session[:cart]
-	# 	else
-	# 		session[:cart] = {}
-	# 		cart = session[:cart]
-	# 	end
 
-	# 	if cart[id] then
-	# 		cart[id] = cart[id] + 1
-	# 	else
-	# 		cart[id] = 1
-	# 	end
-	# 	redirect_to :action => :index
-	# end
 	def clearCart
 		session[:cart] = nil
 		redirect_to :action => :index
 	end
+
  	private
  	def cart_params
+
  	end
 end
