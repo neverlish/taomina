@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects
   resources :posts
+  resources :cart
 
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id/add' => 'cart#add'
-  get '/cart' => 'cart#index'
   get '/cart/:id/inc' => 'cart#inc'
   get '/cart/:id/dec' => 'cart#dec'
+  
   root 'home#index'
 
   get '/about' => 'home#about'
