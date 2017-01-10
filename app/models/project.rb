@@ -18,4 +18,13 @@ class Project < ApplicationRecord
 			self.imageurls = Nokogiri::HTML.fragment(text).css('img').map{|img| img.attribute('src')}.collect(&:to_s)
 		end
 	end
+
+	def previous
+	  Project.limit(1).order("id DESC").where("id < ?", id)
+	end
+
+	def next
+	  Project.limit(1).order("id DESC").where("id > ?", id)
+	end
+
 end

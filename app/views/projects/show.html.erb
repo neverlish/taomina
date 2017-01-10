@@ -9,5 +9,13 @@
 		<%= link_to 'Edit', edit_project_path(@project) , class: 'btn btn-default'%>
 		<%= link_to 'Delete', project_path(@project), method: :delete, class: 'btn btn-default' %>
 	<% end %>
-	<%= link_to 'Back', projects_path, class: 'btn btn-default' %>
+	<%= link_to 'Back', projects_path, class: 'btn btn-default' %><% if @project.next != [] %>
+		<%= link_to project_path(@project.next[0].id) do %>
+			<div class="project-box-image" style="height: 240px; background-image: url('<%= @project.next[0].imageurls[0] %>');">
+			<span style="color: #cfcfcf; font-size: 18px;"><%= @project.next[0].name %></span><br>
+			<span style="color: #cfcfcf; font-size: 18px;>Next Project</span>
+			</div>
+		<% end %>
+	<% end %>
 </div>
+
