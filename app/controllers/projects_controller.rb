@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 		@project = Project.new(project_params)
 		@project.user = current_user
 		if @project.save
-			redirect_to '/shop/#{@project.id}'
+			redirect_to '/projects/#{@project.id}'
 		else
 			render :new
 		end
@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
 	def update
 		if @project.update(project_params)
-			redirect_to '/shop/#{@project.id}'
+			redirect_to '/projects/#{@project.id}'
 		else
 			render :edit
 		end

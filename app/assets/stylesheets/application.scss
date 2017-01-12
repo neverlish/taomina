@@ -227,10 +227,12 @@ body {
 }
 
 .project-box-title {
-	font-size: 16px;
-	color: #7f7e7e;
+	font-size: 24px;
+	color: #ffffff;
 	text-align: center;
-	margin-top: 15px;
+	width: 143px;
+	height: 27px;
+	margin: 50px auto 0 auto;
 }
 
 .project-box-price {
@@ -245,6 +247,32 @@ body {
 	background-size: 100% 100% ;
 	background-position: center;
 	background-repeat: no-repeat;
+	padding: 8px;
+}
+
+.project-box-image:hover {
+	background-color: rgba(0,0,0,0.6);
+	.project-box-border {
+		display: block;
+	}
+	.project-box-title {
+		display: block;
+	}
+}
+
+.project-box-border {
+	display: none;
+	border: 2px solid #ffffff;
+	height: 100%;
+	width: 100%;
+}
+
+.project-view-button {
+	color: white;
+	background-color: black;
+	font-size: 12px;
+	width: 50px;
+	margin: auto;
 }
 
 /********* PROJECT DETAIL ********/
@@ -256,6 +284,18 @@ body {
 .project-detail p img {
 	margin: 0 0 !important;
 	width: 100% !important;
+}
+
+.project-next-title {
+	color: white;
+	font-size: 18px;
+	margin-top: 30px;
+	text-decoration: underline;
+}
+
+.project-next-text {
+	color: #cfcfcf;
+	font-size: 18px;
 }
 
 
