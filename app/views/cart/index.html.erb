@@ -22,7 +22,7 @@
 							<div class="cart-each-table-column col-md-4 text-center">
 
 								<div class="cart-each-table-title">
-									판매가
+									price
 								</div>
 								<div class="cart-each-table-content">
 									<%= number_to_currency(each.project.price, unit: '$') %>
@@ -30,19 +30,27 @@
 							</div>
 							<div class="cart-each-table-column col-md-4 text-center">
 								<div class="cart-each-table-title">
-									수량
+									quantity
 								</div>
-								<% if each.quantity > 1 %>
-								<%= link_to "-", "/cart/#{each.id}/dec" %>
-								<% end %>
 								<div class="cart-each-table-content">
 									<%= each.quantity %>
 								</div>
-								<%= link_to "+", "/cart/#{each.id}/inc" %>
+
+								<div class="dropdown">
+								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    Dropdown
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										<% (1..9).each do |i| %>
+											<li><a href="/cart/<%= each.id %>/<%= i %>"><%= i %></a></li>
+										<% end %>
+								  </ul>
+								</div>
 							</div>
 							<div class="cart-each-table-column col-md-4 text-center">
 								<div class="cart-each-table-title">
-									배송비
+									shipping
 								</div>
 								<div class="cart-each-table-content">
 									FREE

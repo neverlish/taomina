@@ -7,9 +7,8 @@ Rails.application.routes.draw do
 
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id/add' => 'cart#add'
-  get '/cart/:id/inc' => 'cart#inc'
-  get '/cart/:id/dec' => 'cart#dec'
-  
+  get '/cart/:id/:qty' => 'cart#qty'
+
   root 'home#index'
 
   get '/about' => 'home#about'

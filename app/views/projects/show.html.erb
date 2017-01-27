@@ -6,12 +6,14 @@
 
 
 	<hr>
-	<%= link_to project_path(@project.next[0].id) do %>
-		<div class="text-center" style="height: 240px; background-color: rgba(0,0,0,0.6); background-image: url('<%= @project.next[0].imageurls[0] %>');">
-			<div class="project-next-title"><%= @project.next[0].name %></div>
-			<div class="project-next-text">Next Project</div>
-			<%= image_tag "nextpage" %>
-			</div>
+	<% if @project.next.length > 0 %>
+		<%= link_to project_path(@project.next[0].id) do %>
+			<div class="text-center" style="height: 240px; background-color: rgba(0,0,0,0.6); background-image: url('<%= @project.next[0].imageurls[0] %>');">
+				<div class="project-next-title"><%= @project.next[0].name %></div>
+				<div class="project-next-text">Next Project</div>
+				<%= image_tag "nextpage" %>
+				</div>
+		<% end %>
 	<% end %>
 	<div class="text-right">
 		<% if @project.user == current_user %>

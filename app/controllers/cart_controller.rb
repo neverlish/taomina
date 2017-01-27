@@ -14,17 +14,11 @@ class CartController < ApplicationController
 		@cart = Cart.where(user: current_user)
 	end
 
-	def inc
-		@cart = Cart.find(params[:id])
-		quantity = @cart.quantity
-		@cart.update(quantity: quantity + 1)
-		redirect_to :back
-	end
 
-	def dec
+	def qty
 		@cart = Cart.find(params[:id])
-		quantity = @cart.quantity
-		@cart.update(quantity: quantity - 1)
+		quantity = params[:qty]
+		@cart.update(quantity: quantity)
 		redirect_to :back
 	end
 
