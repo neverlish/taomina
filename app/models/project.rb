@@ -6,7 +6,7 @@ class Project < ApplicationRecord
 	has_attached_file :image
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-	
+
 	# validates :category, presence: true
 	validates :name, presence: true
 	validates :text, presence: true
@@ -24,7 +24,7 @@ class Project < ApplicationRecord
 	end
 
 	def next
-	  Project.limit(1).order("id DESC").where("id > ?", id)
+	  Project.limit(1).order("id ASC").where("id > ?", id)
 	end
 
 end
